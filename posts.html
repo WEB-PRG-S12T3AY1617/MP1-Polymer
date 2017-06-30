@@ -1,0 +1,134 @@
+<html>
+    <head>
+        
+        <body bgcolor="black">
+        <link rel="stylesheet" href="empi style.css">  
+            
+    
+        <div id="header1" >
+            <a href="homepage.html">
+            <img src="logo.PNG" class="logo"></a>
+            <div class="btn-group">
+            <a href="empi%20lights.html">
+                <button class="button buttonn2"  class="flex-item"> Profiles </button>
+            </a>
+            <a href="photos.html">
+                <button class="button button3" class="flex-item">Photos</button>
+            </a>
+            
+            <a href="viewalbums.html">
+                <button class="button button4" margin-left="5px"> Albums </button>
+            </a>
+            </div>
+            </a>
+        </div>
+     
+     
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+     
+    <script>
+     
+    var counter = 1;
+	var index = 0;
+	var userId=1;
+	var ourRequest = new XMLHttpRequest();
+	
+	$(document).ready(function() {
+	
+	$('#buttonDiv').click(nextTen)
+	ourRequest.open('GET','https://jsonplaceholder.typicode.com/posts');
+    ourRequest.onload = function(){
+		var ourData = JSON.parse(ourRequest.responseText);
+		renderHTML(ourData);
+	};
+	ourRequest.send()
+	
+	
+	});
+	function renderHTML(data){
+	var tempVal = index;
+	var title = "";
+	var e = '<div id="box-container">';
+	var pp= '<p class="title">';
+	var body= "";
+	var user = "";
+	var pUser= '<p class = "name_user">'
+	
+	for(var i=0; i<10;i++){
+	if(userId===1){
+	user+=pUser + "Leanne Graham </p>"
+	}
+	else if(userId===2){
+	user+=pUser + "Ervin Howell </p>"
+	}
+	else if(userId===3){
+	user+=pUser + "Clementine Bauch </p>"
+	}
+	else if(userId===4){
+	user+=pUser + "Patricia Lebsack </p>"
+	}
+	else if(userId===5){
+	user+=pUser + "Chelsey Dietrich </p>"
+	}
+	else if(userId===6){
+	user+=pUser + "Mrs. Dennis Schulist </p>"
+	}
+	else if(userId===7){
+	user+=pUser + "Kurtis Weissnat </p>"
+	}
+	else if(userId===8){
+	user+=pUser + "Nicholas Runolfsdottir V </p>"
+	}
+	else if(userId===9){
+	user+=pUser + "Glenna Reichert </p>"
+	}
+	else if(userId===10){
+	user+=pUser + "Clementina DuBuque </p>"
+	}
+	
+	title += pp + data[index].title;
+	body += '<p class ="bodyPost">' + data[index].body + "</p>";
+	
+	$('#buttonDiv').before(e+ user + title+ "</p>" + body + "</div>");
+	
+	index+=10;
+	userId+=1;
+	
+	
+	title="";
+	body="";
+	user = "";
+	
+	}
+	
+	index = tempVal;
+	userId=1;
+	counter ++;
+	if(index ===9){
+	$("#buttonDiv").hide();
+	}
+	};
+	
+	
+	function nextTen(){
+	index++;
+	var ourRequest = new XMLHttpRequest();
+	ourRequest.open('GET','https://jsonplaceholder.typicode.com/posts');
+    ourRequest.onload = function(){
+		var ourData = JSON.parse(ourRequest.responseText);
+		renderHTML(ourData);
+	};
+	ourRequest.send()
+	
+
+	
+    };
+    </script>
+    
+</head>
+	<body>
+		
+	  <button id="buttonDiv">View More Post </button>
+
+	</body>
+</html>

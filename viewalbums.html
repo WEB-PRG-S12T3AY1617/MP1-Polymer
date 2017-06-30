@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <body bgcolor="black">
+        <link rel="stylesheet" href="empi style.css"> 
+        
+        <div id="header1">
+            <a href="homepage.html">
+            <img src="logo.PNG" class="logo"></a>
+            <div class="btn-group">
+            <a href="empi lights.html">
+                <button class="button buttonn2"  class="flex-item"> Profiles </button>
+            </a>
+            <a href="posts.html">
+                <button class="button button3" class="flex-item">Posts</button>
+            </a>
+            
+            <a href="photos.html">
+                <button class="button button4" margin-left="5px"> Photos </button>
+            </a>
+                
+            
+            </a>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="jquery-3.2.1.js"></script>
+            
+        <script>
+            
+            
+            var nAlbums = 99;
+            var albums;
+            var albPhotos;
+            $(document).ready(function()
+            {
+                var root = 'https://jsonplaceholder.typicode.com';  
+                $.get('https://jsonplaceholder.typicode.com/albums',function(data)
+                {
+                    albums = data;
+                });
+                
+                $.get('https://jsonplaceholder.typicode.com/albums' + localStorage.getItem("albumId") + "/photos", function(data)
+                {
+                    albPhotos = data;
+                });
+                setTimeout(function()
+                {
+                    displayAlbum();
+                }, 1000);
+            });
+            
+            function albumID(val)
+            {
+                console.log(val);
+                localStorage.setItem("albumId", val);
+                window.location.href = "viewalbums.html";
+            }
+            
+            function displayAlbum()
+            {
+                for(var i = nAlbums; i >= 0; i--)
+                {
+                    var photoAlbum = document.createElement("div");
+                    $(photoAlbum).addClass("album");
+                    $(photoAlbum).attr("style", "background-image: url(\"" + albPhotos[i].thumbnailUrl + "\");");
+                    $(photoAlbum).attr("onClick", "fullScreen(" + albPhotos[i].id + ")");
+                    $("#albumDisplay").append(photoAlbum);
+                    $("#albumDisplay").show();
+                }
+            }
+        </script>
+        </body>
+        
+    </head>
+    
+    <body>
+        <div class="fullScreen"></div>
+        <div class="containerPhoto">
+            <div id="albumDisplay"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        
+        <body bgcolor="black">
+        <link rel="stylesheet" href="empi style.css">  
+        
+        <div id="header1">
+            <a href="homepage.html">
+            <img src="logo.PNG" class="logo"></a>
+        <form>
+            <a href="empi%20lights.html"
+                button class="button button1" >Profiles
+            </a>
+            <button class="button button2" > Posts </button>
+            <button class="button buttonn2" > Albums </button>
+        </form>
+        </div>
+        </body>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="jquery-3.2.1.js"></script>
+        
+        <script>
+            var photos;
+            var nPhotos = 4999;
+            
+            $(document).ready(function()
+            {
+                var root = 'https://jsonplaceholder.typicode.com';  
+                $.get('https://jsonplaceholder.typicode.com/photos',function(data)
+                {
+                    photos = data;
+                });
+                
+                setTimeout(function()
+                {
+		          getPhotos();
+                  $(".nextphotos").on("click", function()
+                  {
+                    getPhotos();
+                  });
+	            }, 1000);
+            });
+                
+                function getPhotos()
+                {
+                    if(nPhotos >= 0)
+                    {
+                        for(var i = nPhotos; i >= nPhotos - 14; i--)
+                        {
+                            var photoDiv = document.createElement("div");
+                            $("#albumId").append(photos[i].albumId);
+                            $("#id").append(photos[i].id);
+                            $("#title").append(photos[i].title);
+                            $("#url").append(photos[i].url);
+                            $("#thumbnailUrl").append(photos[i].thumbnailUrl);                          
+                            $(photoDiv).addClass("photoDiv");
+                            $(photoDiv).attr("style", "background-image: url(\"" + photos[i].thumbnailUrl + "\");");
+                            $("#photoDisplay").append(photoDiv);
+                            $("#photoDisplay").show();
+                        }
+                        $(".nextphotos").insertAfter(photoDiv);
+                        nPhotos -= 15;
+                    }
+                    else
+                    {
+                        $(".nextphotos").hide();
+                    }
+                }
+            
+            function fullScreen(id)
+            {
+                
+            }
+        </script>
+        
+    </head>
+    
+    <body>
+        <div id="photoDisplay"></div>
+        <button class="nextphotos">Click for more.</button>
+        
+    </body>
+</html>

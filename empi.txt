@@ -1,0 +1,79 @@
+<html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+		<!-- END -->
+    <script>
+    
+    var root = 'https://jsonplaceholder.typicode.com';   
+    var id = 1;
+        
+    $.ajax({
+        
+      url: root + '/users?id=' + id,
+      method: 'GET'
+        
+    }).then(function(data) {
+      $("#name").append(data.name);
+      $("#username").append(data.username);
+      $("#email").append(data.email);
+      $("#address").append(data.address);
+      $("#phone").append(data.phone);
+      $("#website").append(data.website);
+      $("#company").append(data.company);
+    });
+				   
+        
+        </script>
+    
+</head>
+	<body>
+		<div id="content">
+			<div id="wrapper">
+				<div id="mainDiv">
+					<h4>Name</h4>
+					<div id="name">
+						No title to show.
+					</div>
+				</div>
+                <div id="secondDiv">
+					<h4>Username</h4>
+					<div id="username">
+						No title to show.
+					</div>
+				</div>
+                <div id="thirdDiv">
+					<h4>Email</h4>
+					<div id="email">
+						No title to show.
+					</div>
+				</div>
+                <div id="fourthDiv">
+					<h4>Address</h4>
+					<div id="address">
+						No title to show.
+					</div>
+				</div>
+                <div id="fifthDiv">
+					<h4>Phone</h4>
+					<div id="phone">
+						No title to show.
+					</div>
+				</div>
+                <div id="sixthDiv">
+					<h4>Website</h4>
+					<div id="website">
+						No title to show.
+					</div>
+				</div>
+                <div id="seventhDiv">
+					<h4>Company</h4>
+					<div id="company">
+						No title to show.
+					</div>
+				</div>
+                
+			</div>
+		</div>
+		<!-- END -->
+	</body>
+</html>

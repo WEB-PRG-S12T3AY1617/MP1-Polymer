@@ -1,0 +1,536 @@
+
+#main-content { 
+    display: none; 
+}
+
+#slogan{
+    display: none;
+}
+
+#buttonss{
+    display: none;
+}
+#hidden
+{
+    display: none
+}
+
+#header1{
+    height:50px;
+    background: dodgerblue;
+    
+    width:1920;
+    margin:0px auto;
+    margin-left: -10px;
+    margin-top: -8px;
+}
+
+#footer1{
+    height:50px;
+    background: dodgerblue;
+    
+    width:1920;
+    margin:0px auto;
+    margin-left: -10px;
+}
+
+
+#wrapper{
+    position: relative;
+    margin-top: 500px;
+    margin-left: 80px;
+}
+
+#name{
+    margin-left: 80px;
+    position: relative;
+    font-size: 60px;
+    font-weight: 900;
+    font-family: tahoma;
+    color: dodgerblue;
+
+}
+
+#secondary{
+    margin-left: 80px;
+    position: relative;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: arial;
+    color: white;
+}
+
+#username{
+    margin-left: 80px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: tahoma;
+    color: deepskyblue;
+}
+
+#header{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: tahoma;
+    color: dodgerblue;
+}
+
+#header2{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: tahoma;
+    color: white;
+}
+
+#smallerheader{
+    font-size: 15px;
+    margin-right: 50
+    font-weight: 600;
+    font-family: tahoma;
+    color: dodgerblue;
+}
+
+#smallest{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: tahoma;
+    color: dodgerblue;
+}
+
+#line{
+    margin-left: -20px;
+    width: 1930px;
+    height: 1px;
+}
+
+#welcomeUserContainer{
+	display: flex; 
+	padding: 2vh;
+}
+#welcome{
+	font-weight: 600;
+	font-family: Tahoma;
+    color: dodgerblue;
+	text-align:center;
+    flex: 1;
+}
+.welcome{
+	font-size: 200px;
+
+}
+.user{
+	font-weight:100;
+	font-size: 4.5vw;  
+	font-size:4.5vh;
+}
+.container {
+  margin-left:29vw;
+  margin-right:-26vw;
+  position: relative;
+  width: 15%;
+ 
+  display:inline-block;
+}
+
+.image {
+  display:block;
+}
+
+
+.overlay {
+  position:absolute;
+  
+  top: 0;
+  bottom: 0;
+  left: 55;
+  right: 0;
+  width: 55%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+border-color: black;
+  
+}
+.container:hover .overlay {
+  opacity: 1;
+  border: solid black;
+}
+
+.text {
+  color: dodgerblue;
+  font-size: 2vh;
+  font-size: 2vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-family: tahoma;
+    font-weight: bold;
+}
+
+#combobox{
+    margin-left: 150;
+
+}
+
+a{
+    margin-left: 10px;
+    font-size: 10;
+    color: dodgerblue;
+    text-decoration: none;
+    font-family: tahoma;
+    font-weight: bold;
+    
+}
+
+.buttons1{
+    background: dodgerblue;
+    border-color: dodgerblue;
+    box-shadow: dodgerblue;
+}
+
+.down{
+    height: 25px;
+    width: 250px;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.logo{
+    margin-left: 60px;
+    margin-top: 5px;
+    width: 45px;
+    height: 40px;   
+}
+
+.button1{
+    margin-left: 235;
+    margin-top: 12.5px;
+    font-size: 20;
+    background: dodgerblue;
+    border: none;
+    font-family: tahoma;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    background-color: transparent;
+    height: 50px;
+}
+
+.btn-group .button {
+    background-color: dodgerblue; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+
+.btn-group .button:hover {
+    background-color: royalblue;
+}
+
+.button2{
+    margin-left: 330px;
+    margin-top: 2px;
+    font-size: 20;
+    background: dodgerblue;
+    border: none;
+    font-family: tahoma;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    background-color: transparent;
+    height: 50px;
+}
+
+.buttonn2{
+    margin-left: 430;
+    margin-top: -48px;
+    font-size: 20;
+    background: dodgerblue;
+    border: none;
+    font-family: tahoma;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+}
+
+.button3{
+    margin-left: 530;
+    margin-top: -48px;
+    font-size: 20;
+    background: dodgerblue;
+    border: none;
+    font-family: tahoma;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+}
+
+.button4{
+    margin-left: 630;
+    margin-top: -48px;
+    font-size: 20;
+    background: dodgerblue;
+    border: none;
+    font-family: tahoma;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+}
+.smallbutton{
+    width: 25px;
+    height: 25px;
+    margin-top: -30px;
+    position: absolute;
+    margin-left: 250px;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 1450px;
+    height: 35px;
+    background-color: lightgrey;
+}
+
+.flex-item {
+    background-color: cornflowerblue;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+#email{
+	display:inline;
+}
+#address{
+	display:inline;
+}
+#phone{
+	display:inline;
+}
+#website{
+	display:inline;
+}
+#company{
+	display:inline;
+}
+#containerPost{
+		display: flex;
+		flex-direction:column;
+}
+#box-container {
+    width:70vw;
+    height: 20vh;
+    border:1px solid white;
+    flex:1;
+    margin-left: 15vw;
+	margin-right:15vw;
+    margin-top: 5vh;
+    color: white;
+    font-family: tahoma;
+    font-weight: bold;
+    background: dodgerblue;
+}
+
+#box-container2nd {
+    width:800px;
+    height: 100px;
+    border:1px solid white;
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 180;
+    color: white;
+    font-family: tahoma;
+    font-weight: bold;
+    background: dodgerblue;
+}
+
+#post-container {
+    width:800px;
+    height: 120px;
+    border:1px solid white;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: 30px;
+    color: white;
+    font-family: tahoma;
+    font-weight: bold;
+    background: dodgerblue;
+	display:none;
+}
+
+#post-container2nd {
+    width:800px;
+    height: 120px;
+    border:1px solid white;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: 170px;
+    color: white;
+    font-family: tahoma;
+    font-weight: bold;
+    background: dodgerblue;
+	display:none;
+}
+
+#post-container3rd {
+    width:800px;
+    height: 120px;
+    border:1px solid white;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: 310px;
+    color: white;
+    font-family: tahoma;
+    font-weight: bold;
+    background: dodgerblue;
+	display:none;
+}
+
+.title{
+    margin-left: 3vw;
+    text-decoration: underline;
+}
+.bodyPost{
+	margin-left: 5vw;
+}
+.notbold{
+    margin-left: 20px;
+    font-weight:50;
+}
+
+.id{
+    color: white;
+}
+.name_user{
+	margin-left :1vw;
+}
+#buttonDiv{
+	width:70vw;
+	border:1px solid white;
+    margin-left: 15vw;
+	margin-right:15vw;
+    margin-top: 5vh;
+    color: white;
+    font-family: tahoma;
+    font-weight: bold;
+    background: dodgerblue;
+	text-align: center;
+}
+
+#nextpoto{
+	width:10vw;
+	border:1px solid white;
+    margin-left: 5vw;
+	margin-right:15vw;
+    margin-top: 5vh;
+    color: white;
+    font-family: tahoma;
+    font-weight: bold;
+    background: dodgerblue;
+	text-align: center;
+}
+
+.id{
+    color: white;
+}
+
+.img{
+    height: 50px;
+    float: left;
+}
+
+.photoDiv{
+    height:150px;
+    width:150px;
+    display: block;
+    float: left;
+    margin-right: 40px;
+    margin-top: 50px;
+    
+}
+
+.fullScreen{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    position: fixed;
+    display: none;
+    margin-top: 190;
+    margin-left: 140px;
+}
+
+.wrapper{
+    text-align: center;
+}
+
+.nextphotos{
+    background: white;
+    bottom: 100%;
+    width: 150;
+    height: 50;
+  
+}
+
+.containerPhoto{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
+.containerPhoto span{
+    width: 30%;
+    margin: 0 1%;
+}
+
+.photoDiv2{
+    
+    height: 600px;
+    width: 600px;
+    margin-left: 50vh;
+}
+
+#close {
+    margin-left: 1820;
+    display:inline-block;
+    padding:2px 5px;
+    background: dodgerblue;
+    margin-top: -45px;
+    height: 50px;
+    width:100px;
+    font-family: tahoma;
+    font-weight: bold;
+    color: white;
+    font-size: 17px;
+    
+}
+
+.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 100px;
+}
+
+.contain {
+  text-align: center;
+  padding: 10px 20px;
+}

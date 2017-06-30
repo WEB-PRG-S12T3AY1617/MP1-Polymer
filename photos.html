@@ -1,0 +1,150 @@
+<html>
+    <head>
+        
+        <body bgcolor="black">
+        <link rel="stylesheet" href="empi style.css">  
+        
+        <div id="header1">
+            <a href="homepage.html">
+            <img src="logo.PNG" class="logo"></a>
+            <div class="btn-group">
+            <a href="empi lights.html">
+                <button class="button buttonn2"  class="flex-item"> Profiles </button>
+            </a>
+            <a href="posts.html">
+                <button class="button button3" class="flex-item">Posts</button>
+            </a>
+            
+            <a href="viewalbums.html">
+                <button class="button button4" margin-left="5px"> Albums </button>
+            </a>
+            </div>
+            </a>
+        </div>
+        </body>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="jquery-3.2.1.js"></script>
+        
+        <script>
+                  
+                
+            
+            var photos;
+            var nPhotos = 4999;
+            
+            $(document).ready(function()
+            {
+                var root = 'https://jsonplaceholder.typicode.com';  
+                $.get('https://jsonplaceholder.typicode.com/photos',function(data)
+                {
+                    photos = data;
+                });
+                
+                setTimeout(function()
+                {
+		          getPhotos();
+                  $(".nextphotos").on("click", function()
+                  {
+                    getPhotos();
+                  });
+	            }, 1000);
+            });
+                
+
+            
+            
+                function getPhotos()
+                {
+                    if(nPhotos >= 0)
+                    {
+                        for(var i = nPhotos; i >= nPhotos - 13; i--)
+                        {
+                            var photoDiv = document.createElement("div");
+                            $("#albumId").append(photos[i].albumId);
+                            $("#id").append(photos[i].id);
+                            $("#title").append(photos[i].title);
+                            $("#url").append(photos[i].url);
+                            $("#thumbnailUrl").append(photos[i].thumbnailUrl);
+                            $(photoDiv).addClass("photoDiv");
+                            $(photoDiv).attr("style", "background-image: url(\"" + photos[i].thumbnailUrl + "\");");
+                            $(photoDiv).attr("onClick", "fullScreen(" + photos[i].id +")");
+                            $("#photoDisplay").append(photoDiv);
+                            $("#photoDisplay").show();
+                        }
+                        $(".nextphotos").insertAfter(photoDiv);
+                        nPhotos -= 14;
+                    }
+                    else
+                    {
+                        $(".nextphotos").hide();
+                    }
+                }
+            
+            function fullScreen(id)
+            {
+                id -= 1;
+                var photoFS = document.createElement("div");
+                var details = document.createElement("div");
+                var pTitle = document.createElement("span");
+                var pAuthor = document.createElement("p");
+                var pAlbum = document.createElement("p");
+                
+                $(photoFS).addClass("photoDiv2");
+                $(photoFS).attr("style", "background-image: url(\"" + photos[id].url + "\");");
+                $(".fullScreen").append(photoFS);
+                $(".fullScreen").show();
+                $(details).addClass("detailsPic");
+                $(pTitle).addClass("pTitle");
+                $(pTitle).text("Title: " + photos[id].title);
+                $(details).append(pTitle);
+                $(details).append(pAuthor);
+                $(details).append(pAlbum);
+                $(".photoFS").append(details);
+                
+                $(".fullScreen").on("click", function(e){        
+                    $(".fullScreen").empty();
+                    $(".fullScreen").hide();
+                    
+                    
+                });
+            
+            $.ajax({
+        
+      url: root + '/photos?id=' + id,
+ 
+      method: 'GET'
+        
+    }).then(function(data) {
+      $("#title").html(photos[id].title);
+
+    });
+            
+            
+                
+            }
+        </script>
+        
+    </head>
+    
+    <body>
+        <br>
+        <br>
+        
+        <div class="fullScreen">
+            
+        </div>
+        <div class="containerPhoto">
+            <span>
+                <div id="photoDisplay"></div>
+            </span>
+            
+            <button class="nextphotos" id="nextpoto">View More Photos </button>
+            
+            
+        </div>
+        
+    </body>
+</html>
